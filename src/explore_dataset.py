@@ -51,7 +51,8 @@ for metric, value in results.items():
 rf_model=build_random_forest()
 rf_model.fit(xtrain,ytrain)
 results1=evaluate_model(rf_model,xtest,ytest)
-for metric, value in results.items():
+print("\nRandom Forest results:")
+for metric, value in results1.items():
     print(f"{metric}: {value:.4f}")
 
 
