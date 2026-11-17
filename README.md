@@ -33,25 +33,7 @@ This repository takes one small machine-learning problem (predicting California 
 
 ---
 
-## Progress timeline
 
-How this project was actually built, in order. Dates are when each step was worked on.
-
-| Date (2026) | What I built or learned | Result |
-| --- | --- | --- |
-| Nov 1-2 | Set up the project and wrote data ingestion with tests: load a CSV, check required columns, drop rows with a missing target, fill missing features with medians | First pytest tests passing |
-| Nov 2 | Loaded California Housing (20,640 rows, 9 columns, no missing values), checked correlations (`MedInc` is the strongest at about 0.69), split 80/20 (16,512 train / 4,128 test) | Linear baseline R² 0.576, Random Forest R² 0.805 |
-| Nov 5 | Compared train vs test score (0.97 vs 0.80), hand-tuned the forest, ran 5-fold cross-validation and `RandomizedSearchCV`, logged runs to MLflow, saved the model with Joblib | Chose the original Random Forest; model-saving test added |
-| Nov 9 | Built the FastAPI app: model loaded at startup (lifespan), Pydantic validation, `/predict`; tested with `TestClient`; studied ASGI | API tests passing |
-| Nov 10 | Studied sync vs async; added logging and error handling (500/503) with failure tests; built Docker images (v1 1.95 GB, v2 869 MB); volumes vs bind mounts; environment variables; Docker Compose; studied CI/CD concepts; first GitHub push (hit large-file and history problems) | 20 tests passing, API running in Docker |
-| Nov 12 | Added Prometheus metrics and inference timing; first Locust load tests | Saw inference time rise under load |
-| Nov 14 | Ran three API replicas behind Nginx; compared 1 vs 3 replicas with Locust and `docker stats`; started Kubernetes concepts | 13.32 req/s to 62.45 req/s |
-| Nov 14-17 | Made a clean copy with fresh Git history, kept the 138 MB model out of Git, fixed Compose and requirements files, wrote this README | Repository published |
-| Nov 17 | Started hands-on Kubernetes (Lesson 1: local cluster and first Pod) | In progress |
-
-> CI/CD and most of Kubernetes are still at the "understood the idea" stage. This table does not claim more than that.
-
----
 
 ## Contents
 
