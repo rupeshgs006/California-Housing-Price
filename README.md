@@ -37,7 +37,6 @@ This repository takes one small machine-learning problem (predicting California 
 
 ## Contents
 
-> New here? Read the [progress timeline](#progress-timeline) first to see how the project was built step by step.
 
 1. [Project overview](#1-project-overview)
 2. [Concepts you need first (mini glossary)](#2-concepts-you-need-first-mini-glossary)
