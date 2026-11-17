@@ -1,0 +1,34 @@
+
+services:
+
+  api1:
+    image: house-price-api:v3
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    expose:
+      - "8000"
+
+  api2:
+    image: house-price-api:v3
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    expose:
+      - "8000"
+
+  api3:
+    image: house-price-api:v3
+    volumes:
+      - ./artifacts:/app/artifacts:ro    
+    expose:
+      - "8000"
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    depends_on:
+      - api1
+      - api2
+      - api3

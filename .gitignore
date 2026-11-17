@@ -1,0 +1,35 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Model artifacts
+artifacts/*
+!artifacts/.gitkeep
+*.joblib
+
+# Experiment tracking
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Generated data and reports
+data/
+.ipynb_checkpoints/
+*_stats.csv
+*_stats_history.csv
+*_failures.csv
+*_exceptions.csv
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
